@@ -1,3 +1,7 @@
+import game1 from "../assets/images/game1.jpg";
+import game2 from "../assets/images/game2.jpg";
+import game3 from "../assets/images/game3.jpg";
+
 const Carousel = () => {
   return (
     <div
@@ -29,55 +33,25 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item">
-          <svg
-            className="bd-placeholder-img"
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <rect
-              width="100%"
-              height="100%"
-              fill="var(--bs-secondary-color)"
-            ></rect>
-          </svg>
+          <img
+            src={game1}
+            className="d-block w-100 h-100 img-fluid"
+            alt="game1"
+          />
         </div>
         <div className="carousel-item">
-          <svg
-            className="bd-placeholder-img"
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <rect
-              width="100%"
-              height="100%"
-              fill="var(--bs-secondary-color)"
-            ></rect>
-          </svg>
+          <img
+            src={game2}
+            className="d-block w-100 h-100 img-fluid"
+            alt="game1"
+          />
         </div>
         <div className="carousel-item active">
-          <svg
-            className="bd-placeholder-img"
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <rect
-              width="100%"
-              height="100%"
-              fill="var(--bs-secondary-color)"
-            ></rect>
-          </svg>
+          <img
+            src={game3}
+            className="d-block w-100 h-100 img-fluid"
+            alt="game1"
+          />
         </div>
       </div>
       <button

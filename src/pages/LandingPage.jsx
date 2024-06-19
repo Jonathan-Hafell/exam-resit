@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Carousel from "../components/Carousel";
 import "../styles/LandingPage.scss";
+import { handleRegister } from "../events/handleRegister.js";
+import { handleLogin } from "../events/handleLogin.js";
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState("register");
@@ -9,15 +11,19 @@ const LandingPage = () => {
   const [password, setPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleRegisterSubmit = (e) => {
-    e.preventDefault();
-    // Handle registration logic here
+  const handleRegisterSubmit = async (event) => {
+    event.preventDefault();
+    await handleRegister(username, email, password);
   };
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    // Handle login logic here
+  const handleLoginSubmit = async (event) => {
+    event.preventDefault();
+    const success = await handleLogin(loginEmail, loginPassword);
+    if (!success) {
+      setErrorMessage("Incorrect username or password");
+    }
   };
 
   return (
@@ -48,6 +54,7 @@ const LandingPage = () => {
           {activeTab === "login" && (
             <div className="tab-pane active">
               <form onSubmit={handleLoginSubmit}>
+                {errorMessage && <p className="text-danger">{errorMessage}</p>}
                 <div className="form-group">
                   <input
                     type="email"
