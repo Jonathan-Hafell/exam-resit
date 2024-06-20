@@ -1,4 +1,10 @@
-import { createContext, useState, useMemo, useCallback } from "react";
+import {
+  createContext,
+  useState,
+  useMemo,
+  useCallback,
+  useEffect,
+} from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
@@ -8,6 +14,14 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check localStorage for the JWT token
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const login = useCallback(() => {
     setIsLoggedIn(true);
   }, []);
@@ -15,6 +29,7 @@ export const AuthProvider = ({ children }) => {
   const logout = useCallback(() => {
     setIsLoggedIn(false);
     localStorage.removeItem("user");
+    localStorage.removeItem("jwt");
     navigate("/");
   }, [navigate]);
 
