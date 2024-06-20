@@ -4,6 +4,7 @@ import "../styles/LandingPage.scss";
 import { handleRegister } from "../events/handleRegister.js";
 import { handleLogin } from "../events/handleLogin.js";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../api/auth/AuthContextTemp.jsx";
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState("register");
@@ -15,6 +16,7 @@ const LandingPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleRegisterSubmit = async (event) => {
     event.preventDefault();
@@ -37,6 +39,7 @@ const LandingPage = () => {
     event.preventDefault();
     const success = await handleLogin(loginEmail, loginPassword);
     if (success) {
+      login();
       navigate("/browse");
     } else {
       setErrorMessage("Incorrect username or password");

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../api/auth/AuthContext";
 
 const Header = () => {
+  const { isLoggedIn, logout } = useAuth();
   return (
     <nav
       className="navbar navbar-expand-sm navbar-dark bg-dark"
@@ -39,6 +41,20 @@ const Header = () => {
                 Contact
               </Link>
             </li>
+            {isLoggedIn && (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/cart">
+                    Cart
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link btn" onClick={logout}>
+                    Logout
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
