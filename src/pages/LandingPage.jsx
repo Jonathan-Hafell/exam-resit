@@ -3,6 +3,7 @@ import Carousel from "../components/Carousel";
 import "../styles/LandingPage.scss";
 import { handleRegister } from "../events/handleRegister.js";
 import { handleLogin } from "../events/handleLogin.js";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState("register");
@@ -12,16 +13,32 @@ const LandingPage = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleRegisterSubmit = async (event) => {
     event.preventDefault();
-    await handleRegister(username, email, password);
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    const registerSuccess = await handleRegister(username, email, password);
+    if (registerSuccess) {
+      setSuccessMessage("Registration successful!");
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setActiveTab("login");
+    } else {
+      setErrorMessage("Registration failed. Please try again.");
+    }
   };
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     const success = await handleLogin(loginEmail, loginPassword);
-    if (!success) {
+    if (success) {
+      navigate("/browse");
+    } else {
       setErrorMessage("Incorrect username or password");
     }
   };
@@ -86,6 +103,10 @@ const LandingPage = () => {
           {activeTab === "register" && (
             <div className="tab-pane active">
               <form onSubmit={handleRegisterSubmit}>
+                {successMessage && (
+                  <p className="text-success">{successMessage}</p>
+                )}
+                {errorMessage && <p className="text-danger">{errorMessage}</p>}
                 <div className="form-group">
                   <input
                     type="text"

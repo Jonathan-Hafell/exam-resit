@@ -10,6 +10,7 @@ export async function handleRegister(username, email, password) {
 
     // Store user data in localStorage
     save("user", userData);
+    return true;
   } catch (error) {
     console.error("Error during registration:", error);
   }
