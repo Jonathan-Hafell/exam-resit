@@ -4,7 +4,7 @@ import "../styles/LandingPage.scss";
 import { handleRegister } from "../events/handleRegister.js";
 import { handleLogin } from "../events/handleLogin.js";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../api/auth/AuthContextTemp.jsx";
+import { useAuth } from "../api/auth/AuthContext.jsx";
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState("register");
