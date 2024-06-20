@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../api/auth/AuthContext";
+import { useAuth } from "../api/auth/useAuth";
 
 const Header = () => {
   const { isLoggedIn, logout } = useAuth();

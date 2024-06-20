@@ -1,18 +1,22 @@
-import { createContext, useState, useMemo } from "react";
-import PropTypes from "prop-types"; // Optional: Only if you want to add prop type validation
+import { createContext, useState, useMemo, useCallback } from "react";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
-  const login = () => {
+  const login = useCallback(() => {
     setIsLoggedIn(true);
-  };
+  }, []);
 
-  const logout = () => {
+  const logout = useCallback(() => {
     setIsLoggedIn(false);
-  };
+    localStorage.removeItem("user");
+    navigate("/");
+  }, [navigate]);
 
   const value = useMemo(
     () => ({
@@ -20,13 +24,12 @@ export const AuthProvider = ({ children }) => {
       login,
       logout,
     }),
-    [isLoggedIn]
+    [isLoggedIn, login, logout]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-// Optional: PropTypes validation
 AuthProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
