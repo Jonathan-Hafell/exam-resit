@@ -56,7 +56,6 @@ const GamesDetailPage = () => {
         <p>
           <strong>Release Date:</strong> {game.attributes.releaseDate}
         </p>
-        {/* Add other game details as needed */}
       </div>
     </div>
   );

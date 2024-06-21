@@ -1,65 +1,3 @@
-/*import { useEffect, useState } from "react";
-import { fetchGames } from "../api/getGames";
-import "../styles/BrowsePage.scss";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const BrowsePage = () => {
-  const [games, setGames] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchGamesData = async () => {
-      try {
-        const { data } = await fetchGames();
-        setGames(data);
-      } catch (error) {
-        console.error("Failed to fetch games:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGamesData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="spinner">
-        <FontAwesomeIcon icon={faSpinner} spin size="3x" />
-      </div>
-    );
-  }
-
-  return (
-    <div className="browse-container">
-      <div className="card-container px-5 py-5">
-        {games.map((game) => (
-          <div className="card" style={{ width: "18rem" }} key={game.id}>
-            <img
-              src={game.attributes.image.data.attributes.url}
-              className="card-img-top"
-              alt={game.attributes.image.data.attributes.name}
-            />
-            <div className="card-body">
-              <h5 className="card-title">{game.attributes.title}</h5>
-              <p className="card-text">Platform: {game.attributes.platform}</p>
-              <p className="card-text">
-                Released: {game.attributes.releaseDate}
-              </p>
-              <a href="/" className="btn btn-primary">
-                More info
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default BrowsePage;*/
-
 import { useState, useEffect } from "react";
 import { fetchGames } from "../api/getGames";
 import { fetchGenres } from "../api/getGenres";
@@ -119,31 +57,36 @@ const BrowsePage = () => {
   }
 
   return (
-    <div className="browse-page px-5 py-5">
-      <ul className="nav nav-pills">
-        <li className="nav-item">
-          <button
-            className={`nav-link ${selectedGenre === null ? "active" : ""}`}
-            href="#"
-            onClick={() => handleGenreClick(null)}
-          >
-            All
-          </button>
-        </li>
-        {genres.map((genre) => (
-          <li className="nav-item" key={genre.id}>
+    <div className="browse-page mx-auto my-5">
+      <div className="d-flex justify-content-between">
+        <ul className="nav nav-pills genres">
+          <li className="nav-item">
             <button
-              className={`nav-link ${
-                selectedGenre === genre.id ? "active" : ""
-              }`}
+              className={`nav-link ${selectedGenre === null ? "active" : ""}`}
               href="#"
-              onClick={() => handleGenreClick(genre.id)}
+              onClick={() => handleGenreClick(null)}
             >
-              {genre.attributes.name}
+              All
             </button>
           </li>
-        ))}
-      </ul>
+          {genres.map((genre) => (
+            <li className="nav-item mr-1" key={genre.id}>
+              <button
+                className={`nav-link ${
+                  selectedGenre === genre.id ? "active" : ""
+                }`}
+                href="#"
+                onClick={() => handleGenreClick(genre.id)}
+              >
+                {genre.attributes.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <Link to="/cart" className="btn btn-primary view-cart-button">
+          View Cart
+        </Link>
+      </div>
 
       <div className="card-container mt-4">
         {games.map((game) => (
