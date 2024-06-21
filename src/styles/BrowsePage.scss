@@ -1,17 +1,25 @@
-.games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  margin: 20px;
+.spinner {
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+  height: 100vh;
+  font-size: 3rem;
 }
 
-.game-item {
-  border: 1px solid #ccc;
-  padding: 16px;
-  text-align: center;
+.browse-page {
+  min-height: 90vh;
 }
 
-.game-item img {
-  max-width: 100%;
-  height: auto;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.card {
+  width: 19rem;
+}
+
+.card-img-top {
+  height: 160px;
 }

@@ -2,7 +2,7 @@ import { API_BASE, API_GAMES, API_KEY } from "./constants";
 
 export async function fetchGames() {
   try {
-    const response = await fetch(`${API_BASE}${API_GAMES}`, {
+    const response = await fetch(`${API_BASE}${API_GAMES}?populate=*`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
