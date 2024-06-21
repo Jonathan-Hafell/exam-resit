@@ -66,6 +66,7 @@ import { fetchGenres } from "../api/getGenres";
 import "../styles/BrowsePage.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const BrowsePage = () => {
   const [games, setGames] = useState([]);
@@ -155,9 +156,12 @@ const BrowsePage = () => {
             <div className="card-body d-flex flex-column justify-content-between">
               <h5 className="card-title mb-2">{game.attributes.title}</h5>
               <p className="card-text">Platform: {game.attributes.platform}</p>
-              <a href="/" className="btn btn-primary mt-auto align-self-start">
+              <Link
+                to={`/details/${game.id}`}
+                className="btn btn-primary mt-auto align-self-start"
+              >
                 More info
-              </a>
+              </Link>
             </div>
           </div>
         ))}
