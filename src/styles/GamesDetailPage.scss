@@ -5,3 +5,13 @@
 .game-detail {
   width: 640px;
 }
+
+.heart-btn {
+  border: none;
+  background: none;
+}
+
+.heart-btn .svg-inline--fa {
+  font-size: 1.5rem;
+  color: #ff0000; /* Change to your desired color */
+}

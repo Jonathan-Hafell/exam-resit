@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchGameById } from "../api/getGamesById";
 import "../styles/GamesDetailPage.scss";
+import { addToCart, removeFromCart, isInCart } from "../utils/createCart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
 const GamesDetailPage = () => {
   const { id } = useParams();
@@ -24,6 +28,15 @@ const GamesDetailPage = () => {
 
     fetchData();
   }, [id]);
+
+  const handleCartClick = () => {
+    if (isInCart(game.id)) {
+      removeFromCart(game.id);
+    } else {
+      addToCart(game);
+    }
+    setGame({ ...game }); // Trigger re-render
+  };
 
   if (loading) {
     return <div className="spinner">Loading...</div>; // Use your spinner component here
@@ -56,6 +69,11 @@ const GamesDetailPage = () => {
         <p>
           <strong>Release Date:</strong> {game.attributes.releaseDate}
         </p>
+        <button className="heart-btn" onClick={handleCartClick}>
+          <FontAwesomeIcon
+            icon={isInCart(game.id) ? solidHeart : regularHeart}
+          />
+        </button>
       </div>
     </div>
   );

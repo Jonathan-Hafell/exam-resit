@@ -1,3 +1,19 @@
 .cart-page {
   min-height: 90vh;
+  width: 976px;
+}
+
+.cart-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.checkout-container {
+  margin-top: 20px;
+  text-align: center;
+
+  .btn {
+    width: 200px;
+  }
 }

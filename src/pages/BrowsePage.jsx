@@ -2,9 +2,16 @@ import { useState, useEffect } from "react";
 import { fetchGames } from "../api/getGames";
 import { fetchGenres } from "../api/getGenres";
 import "../styles/BrowsePage.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHeart as solidHeart,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { addToCart, removeFromCart, isInCart } from "../utils/createCart";
 
 const BrowsePage = () => {
   const [games, setGames] = useState([]);
@@ -46,6 +53,15 @@ const BrowsePage = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleCartClick = (game) => {
+    if (isInCart(game.id)) {
+      removeFromCart(game.id);
+    } else {
+      addToCart(game);
+    }
+    setGames([...games]); // Trigger re-render
   };
 
   if (loading) {
@@ -94,17 +110,27 @@ const BrowsePage = () => {
             <img
               src={`${game.attributes.image.data.attributes.url}`}
               className="card-img-top"
-              alt={game.attributes.title}
+              alt={game.attributes.image.title}
             />
             <div className="card-body d-flex flex-column justify-content-between">
               <h5 className="card-title mb-2">{game.attributes.title}</h5>
               <p className="card-text">Platform: {game.attributes.platform}</p>
-              <Link
-                to={`/details/${game.id}`}
-                className="btn btn-primary mt-auto align-self-start"
-              >
-                More info
-              </Link>
+              <div className="d-flex justify-content-between">
+                <Link
+                  to={`/details/${game.id}`}
+                  className="btn btn-primary mt-auto align-self-start"
+                >
+                  More info
+                </Link>
+                <button
+                  className="heart-btn"
+                  onClick={() => handleCartClick(game)}
+                >
+                  <FontAwesomeIcon
+                    icon={isInCart(game.id) ? solidHeart : regularHeart}
+                  />
+                </button>
+              </div>
             </div>
           </div>
         ))}
