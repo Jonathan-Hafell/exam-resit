@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCart } from "../utils/getCart";
 import { Modal, Button } from "react-bootstrap";
 import "../styles/Checkout.scss";
+import BreadcrumbComponent from "../components/Breadcrumb";
 
 const CheckoutPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -25,6 +26,12 @@ const CheckoutPage = () => {
     const cart = getCart();
     setCartItems(cart);
   }, []);
+
+  const breadcrumbs = [
+    { label: "Browse", path: "/browse", active: false },
+    { label: "Cart", path: "/cart", active: false },
+    { label: "Checkout", path: "/checkout", active: true },
+  ];
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -55,6 +62,7 @@ const CheckoutPage = () => {
 
   return (
     <div className="checkout-page">
+      <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       <div className="row g-5">
         <div className="col-md-5 col-lg-4 order-md-last">
           <h4 className="d-flex justify-content-between align-items-center mb-3">

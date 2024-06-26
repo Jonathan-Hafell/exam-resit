@@ -2,10 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchGameById } from "../api/getGamesById";
 import "../styles/GamesDetailPage.scss";
+import BreadcrumbComponent from "../components/Breadcrumb";
 import { addToCart, removeFromCart, isInCart } from "../utils/createCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
-import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSpinner,
+  faHeart as solidHeart,
+} from "@fortawesome/free-solid-svg-icons";
 
 const GamesDetailPage = () => {
   const { id } = useParams();
@@ -29,17 +33,30 @@ const GamesDetailPage = () => {
     fetchData();
   }, [id]);
 
+  const breadcrumbs = [
+    { label: "Browse", path: "/browse", active: false },
+    {
+      label: game ? game.attributes.title : "Loading...",
+      path: `/details/${id}`,
+      active: true,
+    },
+  ];
+
   const handleCartClick = () => {
     if (isInCart(game.id)) {
       removeFromCart(game.id);
     } else {
       addToCart(game);
     }
-    setGame({ ...game }); // Trigger re-render
+    setGame({ ...game });
   };
 
   if (loading) {
-    return <div className="spinner">Loading...</div>; // Use your spinner component here
+    return (
+      <div className="spinner">
+        <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+      </div>
+    );
   }
 
   if (error) {
@@ -52,6 +69,7 @@ const GamesDetailPage = () => {
 
   return (
     <div className="game-detail-container p-5">
+      <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       <div className="game-detail">
         <h1 className="mb-2">{game.attributes.title}</h1>
         <img

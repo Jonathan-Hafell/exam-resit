@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { fetchGames } from "../api/getGames";
 import { fetchGenres } from "../api/getGenres";
 import "../styles/BrowsePage.scss";
-
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
@@ -61,7 +60,7 @@ const BrowsePage = () => {
     } else {
       addToCart(game);
     }
-    setGames([...games]); // Trigger re-render
+    setGames([...games]);
   };
 
   if (loading) {

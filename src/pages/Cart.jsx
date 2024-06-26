@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCart } from "../utils/getCart";
 import { removeFromCart } from "../utils/createCart";
 import "../styles/Cart.scss";
+import BreadcrumbComponent from "../components/Breadcrumb";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -14,11 +15,17 @@ const Cart = () => {
 
   const handleRemove = (gameId) => {
     removeFromCart(gameId);
-    setCartItems(getCart()); // Update the state after removal
+    setCartItems(getCart());
   };
+
+  const breadcrumbs = [
+    { label: "Browse", path: "/browse", active: false },
+    { label: "Cart", path: "/cart", active: true },
+  ];
 
   return (
     <div className="cart-page mx-auto my-5">
+      <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
