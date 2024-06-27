@@ -15,6 +15,11 @@ const CheckoutPage = () => {
     setCartItems(cart);
   }, []);
 
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.attributes.price,
+    0
+  );
+
   const breadcrumbs = [
     { label: "Browse", path: "/browse", active: false },
     { label: "Cart", path: "/cart", active: false },
@@ -74,7 +79,7 @@ const CheckoutPage = () => {
               ))}
               <li className="list-group-item d-flex justify-content-between">
                 <span>Total (NOK)</span>
-                <strong>200</strong>
+                <strong>{totalPrice}</strong>
               </li>
             </ul>
           </Col>

@@ -79,6 +79,9 @@ const GamesDetailPage = () => {
         />
         <p>{game.attributes.description}</p>
         <p>
+          <strong>Price:</strong> {game.attributes.price}
+        </p>
+        <p>
           <strong>Platform:</strong> {game.attributes.platform}
         </p>
         <p>

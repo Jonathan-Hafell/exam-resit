@@ -42,6 +42,7 @@ const Cart = () => {
                 <p className="card-text">
                   Platform: {game.attributes.platform}
                 </p>
+                <p className="card-text">Price: {game.attributes.price}</p>
                 <button
                   onClick={() => handleRemove(game.id)}
                   className="btn btn-danger"

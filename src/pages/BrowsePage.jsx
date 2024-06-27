@@ -114,6 +114,7 @@ const BrowsePage = () => {
             <div className="card-body d-flex flex-column justify-content-between">
               <h5 className="card-title mb-2">{game.attributes.title}</h5>
               <p className="card-text">Platform: {game.attributes.platform}</p>
+              <p className="card-text">Price: {game.attributes.price}</p>
               <div className="d-flex justify-content-between">
                 <Link
                   to={`/details/${game.id}`}
