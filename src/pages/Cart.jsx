@@ -24,7 +24,7 @@ const Cart = () => {
   ];
 
   return (
-    <div className="cart-page mx-auto my-5">
+    <div className="cart-page mx-auto py-5">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -42,13 +42,15 @@ const Cart = () => {
                 <p className="card-text">
                   Platform: {game.attributes.platform}
                 </p>
-                <p className="card-text">Price: {game.attributes.price}</p>
-                <button
-                  onClick={() => handleRemove(game.id)}
-                  className="btn btn-danger"
-                >
-                  Remove
-                </button>
+                <div className="d-flex justify-content-between align-items-center">
+                  <button
+                    onClick={() => handleRemove(game.id)}
+                    className="btn btn-danger"
+                  >
+                    Remove
+                  </button>
+                  <p className="card-text price">{game.attributes.price} Kr</p>
+                </div>
               </div>
             </div>
           ))}
