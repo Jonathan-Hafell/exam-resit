@@ -70,16 +70,26 @@ const GamesDetailPage = () => {
   return (
     <div className="game-detail-container p-5">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
-      <div className="game-detail">
+      <div className="game-detail my-5">
         <h1 className="mb-2">{game.attributes.title}</h1>
-        <img
-          src={game.attributes.image.data.attributes.url}
-          alt={game.attributes.title}
-          className="img-fluid mb-4"
-        />
-        <p>{game.attributes.description}</p>
+        <div className="img-container">
+          <img
+            src={game.attributes.image.data.attributes.url}
+            alt={game.attributes.title}
+            className="img-fluid"
+          />
+          <button className="heart-btn" onClick={handleCartClick}>
+            <FontAwesomeIcon
+              icon={isInCart(game.id) ? solidHeart : regularHeart}
+            />
+          </button>
+        </div>
+
         <p>
-          <strong>Price:</strong> {game.attributes.price}
+          <strong>Description:</strong> {game.attributes.description}
+        </p>
+        <p>
+          <strong>Price:</strong> {game.attributes.price} Kr
         </p>
         <p>
           <strong>Platform:</strong> {game.attributes.platform}
@@ -90,11 +100,6 @@ const GamesDetailPage = () => {
         <p>
           <strong>Release Date:</strong> {game.attributes.releaseDate}
         </p>
-        <button className="heart-btn" onClick={handleCartClick}>
-          <FontAwesomeIcon
-            icon={isInCart(game.id) ? solidHeart : regularHeart}
-          />
-        </button>
       </div>
     </div>
   );

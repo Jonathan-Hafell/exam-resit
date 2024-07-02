@@ -6,6 +6,22 @@
   width: 640px;
 }
 
+.img-container {
+  position: relative;
+  .heart-btn .svg-inline--fa {
+    background-color: #0a012c;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 2px solid #c571f9;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #c571f9;
+    font-size: 22px;
+    cursor: pointer;
+  }
+}
+
 .heart-btn {
   border: none;
   background: none;
@@ -13,5 +29,5 @@
 
 .heart-btn .svg-inline--fa {
   font-size: 1.5rem;
-  color: #ff0000; /* Change to your desired color */
+  color: #ff0000;
 }
