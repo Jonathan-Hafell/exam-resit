@@ -72,8 +72,8 @@ const BrowsePage = () => {
   }
 
   return (
-    <div className="browse-page mx-auto my-5">
-      <div className="d-flex justify-content-between">
+    <div className="browse-page mx-auto py-5">
+      <div className="genres d-flex justify-content-between">
         <ul className="nav nav-pills genres">
           <li className="nav-item">
             <button
@@ -111,25 +111,25 @@ const BrowsePage = () => {
               className="card-img-top"
               alt={game.attributes.image.title}
             />
-            <div className="card-body d-flex flex-column justify-content-between">
+            <button className="heart-btn" onClick={() => handleCartClick(game)}>
+              <FontAwesomeIcon
+                icon={isInCart(game.id) ? solidHeart : regularHeart}
+              />
+            </button>
+            <div className="card-body">
               <h5 className="card-title mb-2">{game.attributes.title}</h5>
-              <p className="card-text">Platform: {game.attributes.platform}</p>
-              <p className="card-text">Price: {game.attributes.price}</p>
-              <div className="d-flex justify-content-between">
+              <p className="card-text platform">
+                Platform: {game.attributes.platform}
+              </p>
+
+              <div className="d-flex justify-content-between align-items-center">
                 <Link
                   to={`/details/${game.id}`}
                   className="btn btn-primary mt-auto align-self-start"
                 >
                   More info
                 </Link>
-                <button
-                  className="heart-btn"
-                  onClick={() => handleCartClick(game)}
-                >
-                  <FontAwesomeIcon
-                    icon={isInCart(game.id) ? solidHeart : regularHeart}
-                  />
-                </button>
+                <p className="card-text price">{game.attributes.price} Kr</p>
               </div>
             </div>
           </div>

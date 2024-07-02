@@ -1,3 +1,7 @@
+main {
+  background-color: #f7f7f7;
+}
+
 .spinner {
   display: flex;
   justify-content: center;
@@ -11,6 +15,37 @@
   width: 976px;
 }
 
+.genres {
+  .nav-link.active {
+    background-color: #8518c9 !important;
+    border: 2px solid #8518c9 !important;
+  }
+
+  .nav-link {
+    color: #8518c9;
+    box-sizing: border-box;
+    border: 2px solid #f7f7f7;
+  }
+
+  .nav-link:hover {
+    color: black;
+    background-color: #f7f7f7;
+    border: 2px solid #8518c9;
+  }
+
+  .btn-primary {
+    background-color: #8518c9;
+    border: 2px solid #8518c9;
+  }
+
+  .btn-primary:hover {
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    color: black;
+    border: 2px solid #8518c9;
+  }
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -18,19 +53,39 @@
 }
 
 .card {
-  width: 19rem;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+
+  .heart-btn .svg-inline--fa {
+    background-color: #0a012c;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 2px solid #c571f9;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #c571f9;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: #8518c9;
+    border: 2px solid #8518c9;
+  }
+
+  .btn-primary:hover {
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    color: black;
+    border: 2px solid #8518c9;
+  }
+
+  .price {
+    font-size: 18px;
+  }
 }
 
 .card-img-top {
   height: 160px;
-}
-
-.heart-btn {
-  border: none;
-  background: none;
-}
-
-.heart-btn .svg-inline--fa {
-  font-size: 1.5rem;
-  color: #ff0000; /* Change to your desired color */
 }
