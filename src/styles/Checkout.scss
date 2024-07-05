@@ -1,4 +1,44 @@
 .checkout-page {
   width: 976px;
-  margin: 64px auto;
+
+  .checkout-btn {
+    background-color: #8518c9;
+    border: 2px solid #8518c9;
+  }
+
+  .checkout-btn:hover {
+    background-color: #f7f7f7;
+    border: 2px solid #8518c9;
+    color: black;
+  }
+}
+
+.your-cart {
+  color: #8518c9;
+}
+
+.your-cart-items {
+  background-color: #8518c9;
+}
+
+.modal-footer .confirm-payment {
+  background-color: #8518c9;
+  border: 2px solid #8518c9;
+}
+
+.modal-footer .confirm-payment:hover {
+  background-color: white;
+  border: 2px solid #8518c9;
+  color: black;
+}
+
+.modal-footer .cancel-payment {
+  border: 2px solid #8518c9;
+  background-color: white;
+  color: black;
+}
+
+.modal-footer .cancel-payment:hover {
+  background-color: #8518c9;
+  border: 2px solid #8518c9;
 }

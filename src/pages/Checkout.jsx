@@ -49,14 +49,14 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className="checkout-page">
+    <div className="checkout-page py-5 m-auto">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       <Container>
         <Row className="g-5">
-          <Col md={5} lg={4} className="order-md-last">
+          <Col md={5} lg={4} className=" order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
-              <span className="text-primary">Your cart</span>
-              <span className="badge bg-primary rounded-pill">
+              <span className="your-cart">Your cart</span>
+              <span className="your-cart-items badge rounded-pill">
                 {cartItems.length}
               </span>
             </h4>
@@ -73,7 +73,7 @@ const CheckoutPage = () => {
                     </small>
                   </div>
                   <span className="text-body-secondary">
-                    ${item.attributes.price}
+                    {item.attributes.price}
                   </span>
                 </li>
               ))}
@@ -83,7 +83,7 @@ const CheckoutPage = () => {
               </li>
             </ul>
           </Col>
-          <Col md={7} lg={8}>
+          <Col md={7} lg={8} className="checkout-form">
             <h4 className="mb-3">Billing address</h4>
             <Form
               noValidate
@@ -135,7 +135,7 @@ const CheckoutPage = () => {
                     <Form.Control
                       required
                       type="text"
-                      placeholder="1234 Main St"
+                      placeholder="Karl Johans gt. 37"
                     />
                     <Form.Control.Feedback type="invalid">
                       Please enter your shipping address.
@@ -286,7 +286,7 @@ const CheckoutPage = () => {
 
               <hr className="my-4" />
 
-              <Button className="w-100 btn-lg" type="submit">
+              <Button className="checkout-btn w-100 btn-lg" type="submit">
                 Continue to checkout
               </Button>
             </Form>
@@ -302,10 +302,18 @@ const CheckoutPage = () => {
           Are you sure you want to proceed with the payment?
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
+          <Button
+            className="cancel-payment"
+            variant="secondary"
+            onClick={handleCloseModal}
+          >
             Cancel
           </Button>
-          <Button variant="primary" onClick={confirmPayment}>
+          <Button
+            className="confirm-payment"
+            variant="primary"
+            onClick={confirmPayment}
+          >
             Confirm
           </Button>
         </Modal.Footer>

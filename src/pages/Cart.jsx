@@ -27,7 +27,7 @@ const Cart = () => {
     <div className="cart-page mx-auto py-5">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="empty-cart mt-4">Your cart is empty.</p>
       ) : (
         <div className="cart-list">
           {cartItems.map((game) => (
