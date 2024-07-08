@@ -87,8 +87,13 @@
 
   @media (max-width: 576px) {
     .overlay {
-      max-width: 95%;
+      max-width: 90%;
       padding: 1rem;
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      display: none;
     }
 
     form {
@@ -100,5 +105,11 @@
         font-size: 0.875rem;
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    // .carousel-item {
+    //   height: 1000px;
+    // }
   }
 }

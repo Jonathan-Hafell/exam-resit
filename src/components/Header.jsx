@@ -11,12 +11,12 @@ const Header = () => {
         className="navbar navbar-expand-sm"
         aria-label="Third navbar example"
       >
-        <div className="container-fluid px-5">
+        <div className="nav-container container-fluid">
           <Link className="navbar-brand" to={isLoggedIn ? "/browse" : "/"}>
             Bits & Bots
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler bg-light"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsExample03"

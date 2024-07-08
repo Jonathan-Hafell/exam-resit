@@ -1,6 +1,15 @@
 import game1 from "../assets/images/game1.jpg";
 import game2 from "../assets/images/game2.jpg";
 import game3 from "../assets/images/game3.jpg";
+import game1_small from "../assets/images/game1_small.jpg";
+import game2_small from "../assets/images/game2_small.jpg";
+import game3_small from "../assets/images/game3_small.jpg";
+import game1_medium from "../assets/images/game1_medium.jpg";
+import game2_medium from "../assets/images/game2_medium.jpg";
+import game3_medium from "../assets/images/game3_medium.jpg";
+import game1_large from "../assets/images/game1_large.jpg";
+import game2_large from "../assets/images/game2_large.jpg";
+import game3_large from "../assets/images/game3_large.jpg";
 
 const Carousel = () => {
   return (
@@ -35,6 +44,8 @@ const Carousel = () => {
         <div className="carousel-item">
           <img
             src={game1}
+            srcSet={`${game1_small} 480w, ${game1_medium} 800w, ${game1_large} 1200w, ${game1} 1920w`}
+            sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, 1920px"
             className="d-block w-100 h-100 img-fluid"
             alt="game1"
           />
@@ -42,6 +53,8 @@ const Carousel = () => {
         <div className="carousel-item">
           <img
             src={game2}
+            srcSet={`${game2_small} 480w, ${game2_medium} 800w, ${game2_large} 1200w`}
+            sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, 1200px"
             className="d-block w-100 h-100 img-fluid"
             alt="game1"
           />
@@ -49,6 +62,8 @@ const Carousel = () => {
         <div className="carousel-item active">
           <img
             src={game3}
+            srcSet={`${game3_small} 480w, ${game3_medium} 800w, ${game3_large} 1200w`}
+            sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, 1200px"
             className="d-block w-100 h-100 img-fluid"
             alt="game1"
           />
