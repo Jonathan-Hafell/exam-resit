@@ -12,7 +12,134 @@ main {
 
 .browse-page {
   min-height: 90vh;
-  max-width: 976px;
+  max-width: 964px;
+  padding: 48px 16px;
+
+  @media (min-width: 320px) {
+    .nav-link {
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    .genres .btn-primary {
+      font-size: 12px;
+      padding: 4px 6px;
+    }
+
+    .card {
+      width: 288px;
+      margin-bottom: 32px;
+    }
+  }
+
+  @media (min-width: 375px) {
+    .nav-link {
+      font-size: 14px;
+      padding: 4px;
+    }
+
+    .genres .btn-primary {
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+
+    .card {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 425px) {
+    .nav-link {
+      font-size: 16px;
+      padding: 8px;
+    }
+
+    .genres .btn-primary {
+      font-size: 16px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .card {
+      width: 184px;
+      margin: 0;
+
+      .card-title {
+        font-size: 12px;
+      }
+
+      .platform {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .btn-primary {
+        padding: 8px;
+        font-size: 12px;
+      }
+
+      .price {
+        font-size: 14px;
+      }
+
+      .card-img-top {
+        height: 130px;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 48px 68px;
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .card {
+      width: 300px;
+
+      .card-title {
+        font-size: 20px;
+      }
+
+      .platform {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+
+      .btn-primary {
+        padding: 8px;
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 18px;
+      }
+
+      .card-img-top {
+        height: 160px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 48px 0;
+  }
 }
 
 .genres {
@@ -46,14 +173,7 @@ main {
   }
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-
 .card {
-  width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 
   .heart-btn .svg-inline--fa {

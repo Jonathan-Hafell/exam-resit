@@ -72,7 +72,7 @@ const BrowsePage = () => {
   }
 
   return (
-    <div className="browse-page mx-auto py-5">
+    <div className="browse-page mx-auto">
       <div className="genres d-flex justify-content-between">
         <ul className="nav nav-pills genres">
           <li className="nav-item">
@@ -122,7 +122,7 @@ const BrowsePage = () => {
                 Platform: {game.attributes.platform}
               </p>
 
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="card-info-container d-flex justify-content-between align-items-center">
                 <Link
                   to={`/details/${game.id}`}
                   className="btn btn-primary mt-auto align-self-start"

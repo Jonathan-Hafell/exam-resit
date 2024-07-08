@@ -20,7 +20,7 @@
     color: red;
   }
 
-  @media (max-width: 576px) {
+  @media (min-width: 320px) {
     .nav-link {
       text-align: center;
       border: 2px solid white;
@@ -34,6 +34,30 @@
 
     .nav-container {
       padding: 0 16px;
+    }
+  }
+
+  @media (min-width: 426px) {
+    .nav-link {
+      border: none;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .nav-container {
+      padding: 0 68px;
+    }
+
+    .nav-link {
+      padding: 0 0 0 16px !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nav-container {
+      padding: 0;
+      max-width: 964px;
     }
   }
 }
