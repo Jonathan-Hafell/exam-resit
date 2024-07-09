@@ -11,13 +11,10 @@ export async function fetchGameById(id) {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Error response data:", errorData);
       throw new Error("Failed to fetch game details");
     }
 
     const data = await response.json();
-    console.log(data.data);
     return data;
   } catch (error) {
     console.error("Error fetching game details:", error);

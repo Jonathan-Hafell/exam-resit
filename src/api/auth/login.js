@@ -1,10 +1,6 @@
 export function loginUser(email, password) {
   const storedData = JSON.parse(localStorage.getItem("user"));
 
-  console.log("Stored user data:", storedData);
-  console.log("Input email:", email);
-  console.log("Input password:", password);
-
   if (!storedData) {
     throw new Error("No user data found in localStorage");
   }

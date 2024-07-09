@@ -17,10 +17,6 @@ export async function registerUser(username, email, password) {
 
     const data = await response.json();
 
-    // Log the response status and data for debugging
-    console.log("Response Status:", response.status);
-    console.log("Response Data:", data);
-
     return data;
   } catch (error) {
     console.error("Error registering user:", error);

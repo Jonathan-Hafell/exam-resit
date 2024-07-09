@@ -15,7 +15,6 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check localStorage for the JWT token
     const token = localStorage.getItem("jwt");
     if (token) {
       setIsLoggedIn(true);

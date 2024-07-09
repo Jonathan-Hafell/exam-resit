@@ -11,13 +11,10 @@ export async function fetchGames() {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Error response data:", errorData);
       throw new Error("Failed to fetch games");
     }
 
     const data = await response.json();
-    console.log(data.data);
     return data;
   } catch (error) {
     console.error("Error fetching games:", error);
