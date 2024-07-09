@@ -1,9 +1,6 @@
 .game-detail-container {
   min-height: 90vh;
-}
-
-.game-detail {
-  width: 640px;
+  padding: 48px 16px;
 }
 
 .img-container {
@@ -30,4 +27,26 @@
 .heart-btn .svg-inline--fa {
   font-size: 1.5rem;
   color: #ff0000;
+}
+
+@media (min-width: 768px) {
+  .game-detail-container {
+    padding: 48px 68px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-detail-container {
+    padding: 48px 0;
+    margin: 0 auto;
+    max-width: 964px;
+  }
+
+  .game-detail-container Strong {
+    font-size: 18px;
+  }
+
+  .game-detail-img {
+    width: 964px;
+  }
 }

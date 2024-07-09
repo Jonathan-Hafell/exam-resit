@@ -64,11 +64,11 @@ main {
     .card-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 16px;
     }
 
     .card {
-      width: 184px;
+      width: 188px;
       margin: 0;
 
       .card-title {
@@ -81,7 +81,7 @@ main {
       }
 
       .btn-primary {
-        padding: 8px;
+        padding: 4px 8px;
         font-size: 12px;
       }
 

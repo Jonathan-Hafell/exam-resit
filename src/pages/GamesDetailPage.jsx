@@ -68,7 +68,7 @@ const GamesDetailPage = () => {
   }
 
   return (
-    <div className="game-detail-container p-5">
+    <div className="game-detail-container">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       <div className="game-detail my-5">
         <h1 className="mb-2">{game.attributes.title}</h1>
@@ -76,7 +76,7 @@ const GamesDetailPage = () => {
           <img
             src={game.attributes.image.data.attributes.url}
             alt={game.attributes.title}
-            className="img-fluid"
+            className="game-detail-img img-fluid"
           />
           <button className="heart-btn" onClick={handleCartClick}>
             <FontAwesomeIcon
