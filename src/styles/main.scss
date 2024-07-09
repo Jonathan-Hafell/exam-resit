@@ -1,4 +1,27 @@
 // src/styles/main.scss
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Additional custom styles
+$font-header: "Lato", sans-serif;
+$font-body: "Roboto", sans-serif;
+
+body {
+  font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-header;
+}
+
+.navbar-brand {
+  font-family: $font-header;
+}
+
+.btn,
+.nav-link {
+  font-family: $font-body;
+}

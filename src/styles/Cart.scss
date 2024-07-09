@@ -108,12 +108,12 @@ main {
     padding: 48px 0;
     margin: 0 auto;
 
+    .card {
+      width: 304px;
+    }
+
     .btn-primary {
       width: 50%;
     }
-  }
-
-  .cart-list {
-    justify-content: space-between;
   }
 }
