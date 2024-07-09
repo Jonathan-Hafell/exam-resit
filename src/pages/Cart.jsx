@@ -24,14 +24,14 @@ const Cart = () => {
   ];
 
   return (
-    <div className="cart-page mx-auto py-5">
+    <div className="cart-page">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       {cartItems.length === 0 ? (
         <p className="empty-cart mt-4">Your cart is empty.</p>
       ) : (
         <div className="cart-list">
           {cartItems.map((game) => (
-            <div key={game.id} className="card" style={{ width: "18rem" }}>
+            <div key={game.id} className="card">
               <img
                 src={`${game.attributes.image.data.attributes.url}`}
                 className="card-img-top"

@@ -5,6 +5,7 @@ main {
 .cart-page {
   min-height: 90vh;
   max-width: 976px;
+  padding: 48px 16px;
 
   .btn-primary {
     background-color: #8518c9;
@@ -31,7 +32,6 @@ main {
 }
 
 .card {
-  width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 
   .btn-danger {
@@ -64,4 +64,56 @@ main {
   color: #ae091a;
   font-weight: bold;
   font-size: 32px;
+}
+
+@media (min-width: 320px) {
+  .cart-page {
+    .btn-primary {
+      width: 100%;
+    }
+
+    .card {
+      width: 300px;
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .cart-page {
+    .card {
+      width: 343px;
+    }
+
+    .card-img-top {
+      height: 180px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .cart-page {
+    padding: 48px 68px;
+    .card {
+      width: 300px;
+    }
+
+    .card-img-top {
+      height: 160px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart-page {
+    padding: 48px 0;
+    margin: 0 auto;
+
+    .btn-primary {
+      width: 50%;
+    }
+  }
+
+  .cart-list {
+    justify-content: space-between;
+  }
 }
