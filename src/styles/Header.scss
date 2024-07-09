@@ -17,7 +17,13 @@
   }
 
   .nav-link.btn {
-    color: red;
+    color: #ff0019;
+  }
+
+  .nav-link:focus,
+  .navbar-brand:focus {
+    color: white;
+    outline: none;
   }
 
   @media (min-width: 320px) {
