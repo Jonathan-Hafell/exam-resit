@@ -1,5 +1,6 @@
 .checkout-page {
-  width: 976px;
+  max-width: 976px;
+  padding: 48px 16px;
 
   .checkout-btn {
     background-color: #8518c9;
@@ -41,4 +42,39 @@
 .modal-footer .cancel-payment:hover {
   background-color: #8518c9;
   border: 2px solid #8518c9;
+}
+
+@media (min-width: 320px) {
+  .checkout-conatiner {
+    padding: 0;
+    margin: 0;
+
+    .order {
+      padding: 0;
+    }
+    .checkout-form {
+      padding: 0;
+    }
+
+    .form-check.my-4 {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .checkout-page {
+    padding: 48px 68px;
+
+    .checkout-form {
+      padding-right: 32px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .checkout-page {
+    padding: 48px 0;
+    margin: 0 auto;
+  }
 }

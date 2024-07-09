@@ -49,11 +49,11 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className="checkout-page py-5 m-auto">
+    <div className="checkout-page">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       <Container>
-        <Row className="g-5">
-          <Col md={5} lg={4} className=" order-md-last">
+        <Row className="checkout-conatiner">
+          <Col md={5} lg={4} className="order order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="your-cart">Your cart</span>
               <span className="your-cart-items badge rounded-pill">
