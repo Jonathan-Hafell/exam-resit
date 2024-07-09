@@ -5,6 +5,12 @@
     height: 95vh;
   }
 
+  .carousel-img {
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+  }
+
   .overlay {
     display: flex;
     flex-direction: column;
@@ -15,7 +21,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: black;
-    padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 400px;
@@ -85,10 +90,10 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (min-width: 320px) {
     .overlay {
       max-width: 90%;
-      padding: 1rem;
+      padding: 16px;
     }
 
     .carousel-control-next-icon,
@@ -107,9 +112,20 @@
     }
   }
 
-  @media (max-width: 768px) {
-    // .carousel-item {
-    //   height: 1000px;
-    // }
+  @media (min-width: 425px) {
+    .overlay {
+      width: 400px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      display: block;
+    }
+
+    .overlay {
+      padding: 32px;
+    }
   }
 }

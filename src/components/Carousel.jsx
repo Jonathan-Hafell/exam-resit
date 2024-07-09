@@ -42,31 +42,29 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item">
-          <img
-            src={game1}
-            srcSet={`${game1_small} 480w, ${game1_medium} 800w, ${game1_large} 1200w, ${game1} 1920w`}
-            sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, 1920px"
-            className="d-block w-100 h-100 img-fluid"
-            alt="game1"
-          />
+          <picture>
+            <source media="(max-width: 480px)" srcSet={game1_small} />
+            <source media="(max-width: 800px)" srcSet={game1_medium} />
+            <source media="(max-width: 1200px)" srcSet={game1_large} />
+            <img src={game1} className="carousel-img" alt="game1" />
+          </picture>
         </div>
+
         <div className="carousel-item">
-          <img
-            src={game2}
-            srcSet={`${game2_small} 480w, ${game2_medium} 800w, ${game2_large} 1200w`}
-            sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, 1200px"
-            className="d-block w-100 h-100 img-fluid"
-            alt="game1"
-          />
+          <picture>
+            <source media="(max-width: 480px)" srcSet={game2_small} />
+            <source media="(max-width: 800px)" srcSet={game2_medium} />
+            <source media="(max-width: 1200px)" srcSet={game2_large} />
+            <img src={game2} className="carousel-img" alt="game2" />
+          </picture>
         </div>
         <div className="carousel-item active">
-          <img
-            src={game3}
-            srcSet={`${game3_small} 480w, ${game3_medium} 800w, ${game3_large} 1200w`}
-            sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, 1200px"
-            className="d-block w-100 h-100 img-fluid"
-            alt="game1"
-          />
+          <picture>
+            <source media="(max-width: 480px)" srcSet={game3_small} />
+            <source media="(max-width: 800px)" srcSet={game3_medium} />
+            <source media="(max-width: 1200px)" srcSet={game3_large} />
+            <img src={game3} className="carousel-img" alt="game2" />
+          </picture>
         </div>
       </div>
       <button
