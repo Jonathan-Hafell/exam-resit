@@ -70,7 +70,7 @@ const GamesDetailPage = () => {
   return (
     <div className="game-detail-container">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
-      <div className="game-detail my-5">
+      <div className="game-detail">
         <h1 className="mb-2">{game.attributes.title}</h1>
         <div className="img-container">
           <img

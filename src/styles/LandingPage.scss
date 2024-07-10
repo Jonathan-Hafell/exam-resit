@@ -110,6 +110,11 @@
         font-size: 0.875rem;
       }
     }
+
+    .carousel-indicators button {
+      background-color: #8518c9;
+      height: 6px;
+    }
   }
 
   @media (min-width: 425px) {
@@ -140,11 +145,6 @@
     .carousel-control-prev:hover,
     .carousel-control-next:hover {
       opacity: 1;
-    }
-
-    .carousel-indicators button {
-      background-color: #8518c9;
-      height: 6px;
     }
   }
 }
