@@ -10,6 +10,8 @@ import game3_medium from "../assets/images/game3_medium.jpg";
 import game1_large from "../assets/images/game1_large.jpg";
 import game2_large from "../assets/images/game2_large.jpg";
 import game3_large from "../assets/images/game3_large.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Carousel = () => {
   return (
@@ -73,7 +75,10 @@ const Carousel = () => {
         data-bs-target="#myCarousel"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          className="carousel-control-prev-icon"
+        />
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -82,7 +87,10 @@ const Carousel = () => {
         data-bs-target="#myCarousel"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          className="carousel-control-next-icon"
+        />
         <span className="visually-hidden">Next</span>
       </button>
     </div>

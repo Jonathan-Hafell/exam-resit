@@ -119,13 +119,32 @@
   }
 
   @media (min-width: 768px) {
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-      display: block;
-    }
-
     .overlay {
       padding: 32px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      display: block;
+      font-size: 30px;
+      color: #8518c9;
+      background: none;
+      opacity: 1;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      opacity: 1;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      opacity: 1;
+    }
+
+    .carousel-indicators button {
+      background-color: #8518c9;
+      height: 6px;
     }
   }
 }
