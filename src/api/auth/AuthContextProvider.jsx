@@ -29,6 +29,7 @@ export const AuthProvider = ({ children }) => {
     setIsLoggedIn(false);
     localStorage.removeItem("user");
     localStorage.removeItem("jwt");
+    localStorage.removeItem("cart");
     navigate("/");
   }, [navigate]);
 

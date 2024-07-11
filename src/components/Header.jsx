@@ -32,17 +32,17 @@ const Header = () => {
               {!isLoggedIn && (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/about">
+                    <Link className="nav-link" to="#">
                       About
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/services">
+                    <Link className="nav-link" to="#">
                       Services
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/contact">
+                    <Link className="nav-link" to="#">
                       Contact
                     </Link>
                   </li>
