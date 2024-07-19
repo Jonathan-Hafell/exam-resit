@@ -13,20 +13,28 @@ Make sure you have the following software installed on your machine:
 Setup instructions
 
 1. Clone the project
-   https://github.com/Jonathan-Hafell/exam-resit
+
+- https://github.com/Jonathan-Hafell/exam-resit
+
 2. Install dependencies
-   Cd exam-resit
-   Npm install
+
+- Cd exam-resit
+- Npm install
+
 3. Obtain an API key
-   Access the Strapi Cloud Dashboard: Go to “https://celebrated-art-c3e8097696.strapiapp.com/admin/auth/login” and log in.
-   Once logged in navigate to the API Keys Section.
-   Generate a New API Key: Click on the button to create a new API key. Give it a name, set the appropriate permissions, and copy the generated key.
+
+- Access the Strapi Cloud Dashboard: Go to “https://celebrated-art-c3e8097696.strapiapp.com/admin/auth/login” and log in.
+- Once logged in navigate to the API Keys Section.
+- Generate a New API Key: Click on the button to create a new API key. Give it a name, and set the appropriate permissions. Ensure that for both the "Games" and "Genre" sections, you enable the 'find' and 'findOne' permissions. Finally, copy the generated key.
+
 4. Create a .env File
-   Create a .env file in the root directory of the project. Add the following environment variable to the file:
-   VITE_API_KEY=”your_generated_api_key_here”
+
+- Create a .env file in the root directory of the project. Add the following environment variable to the file:
+- VITE_API_KEY=your_generated_api_key_here
+
 5. Running the Project
-   To run the project locally, use the following command:
-   Npm run dev
+   - To run the project locally, use the following command:
+   - Npm run dev
 
 # React + Vite
 
