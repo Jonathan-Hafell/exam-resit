@@ -177,7 +177,9 @@ const CheckoutPage = () => {
                       required
                       type="text"
                       placeholder=""
-                      pattern="\d+"
+                      pattern="\d{2,5}"
+                      minLength="2"
+                      maxLength="5"
                     />
                     <Form.Control.Feedback type="invalid">
                       Zip code required.
@@ -247,7 +249,8 @@ const CheckoutPage = () => {
                       required
                       type="text"
                       placeholder=""
-                      pattern="\d+"
+                      pattern="\d{16}"
+                      maxLength="16"
                     />
                     <Form.Control.Feedback type="invalid">
                       Card number is required.
@@ -260,8 +263,9 @@ const CheckoutPage = () => {
                     <Form.Control
                       required
                       type="text"
-                      placeholder=""
-                      pattern="\d+"
+                      placeholder="MM/YY"
+                      pattern="\d{2}/\d{2}"
+                      maxLength="5"
                     />
                     <Form.Control.Feedback type="invalid">
                       Expiration date required.
@@ -275,7 +279,8 @@ const CheckoutPage = () => {
                       required
                       type="text"
                       placeholder=""
-                      pattern="\d+"
+                      pattern="\d{3}"
+                      maxLength="3"
                     />
                     <Form.Control.Feedback type="invalid">
                       Security code required.
