@@ -27,7 +27,14 @@ const Cart = () => {
     <div className="cart-page">
       <BreadcrumbComponent breadcrumbs={breadcrumbs} />
       {cartItems.length === 0 ? (
-        <p className="empty-cart mt-4">Your cart is empty.</p>
+        <div>
+          <p className="empty-cart mt-4">Your cart is empty.</p>
+          <div className="checkout-container disabled">
+            <button className="btn btn-primary" disabled>
+              Checkout
+            </button>
+          </div>
+        </div>
       ) : (
         <div className="cart-list">
           {cartItems.map((game) => (

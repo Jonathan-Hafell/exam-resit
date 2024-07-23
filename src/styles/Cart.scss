@@ -7,6 +7,11 @@ main {
   max-width: 976px;
   padding: 48px 16px;
 
+  .disabled .btn-primary {
+    background-color: #8518c9;
+    border: 2px solid #8518c9;
+  }
+
   .btn-primary {
     background-color: #8518c9;
     border: 2px solid #8518c9;
